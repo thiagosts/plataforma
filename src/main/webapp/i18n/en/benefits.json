@@ -1,0 +1,24 @@
+{
+    "plataformaApp": {
+        "benefits": {
+            "home": {
+                "title": "Benefits",
+                "createLabel": "Create a new Benefits",
+                "createOrEditLabel": "Create or edit a Benefits",
+                "search": "Search for Benefits"
+            },
+            "created": "A new Benefits is created with identifier {{ param }}",
+            "updated": "A Benefits is updated with identifier {{ param }}",
+            "deleted": "A Benefits is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Benefits {{ id }}?"
+            },
+            "detail": {
+                "title": "Benefits"
+            },
+            "name": "Name",
+            "icon": "Icon",
+            "opportunities": "Opportunities"
+        }
+    }
+}

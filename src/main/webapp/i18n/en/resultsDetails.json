@@ -1,0 +1,26 @@
+{
+    "plataformaApp": {
+        "resultsDetails": {
+            "home": {
+                "title": "Results Details",
+                "createLabel": "Create a new Results Details",
+                "createOrEditLabel": "Create or edit a Results Details",
+                "search": "Search for Results Details"
+            },
+            "created": "A new Results Details is created with identifier {{ param }}",
+            "updated": "A Results Details is updated with identifier {{ param }}",
+            "deleted": "A Results Details is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Results Details {{ id }}?"
+            },
+            "detail": {
+                "title": "Results Details"
+            },
+            "value": "Value",
+            "result": "Result",
+            "createdDate": "Created Date",
+            "answers": "Answers",
+            "results": "Results"
+        }
+    }
+}

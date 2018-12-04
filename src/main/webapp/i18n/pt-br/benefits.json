@@ -1,0 +1,24 @@
+{
+    "plataformaApp": {
+        "benefits": {
+            "home": {
+                "title": "Benefits",
+                "createLabel": "Criar novo Benefits",
+                "createOrEditLabel": "Criar ou editar Benefits",
+                "search": "Pesquisar por Benefits"
+            },
+            "created": "Um novo Benefits foi criado com o identificador {{ param }}",
+            "updated": "Um Benefits foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Benefits foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Benefits {{ id }}?"
+            },
+            "detail": {
+                "title": "Benefits"
+            },
+            "name": "Name",
+            "icon": "Icon",
+            "opportunities": "Opportunities"
+        }
+    }
+}

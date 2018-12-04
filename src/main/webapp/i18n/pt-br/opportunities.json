@@ -1,0 +1,40 @@
+{
+    "plataformaApp": {
+        "opportunities": {
+            "home": {
+                "title": "Opportunities",
+                "createLabel": "Criar novo Opportunities",
+                "createOrEditLabel": "Criar ou editar Opportunities",
+                "search": "Pesquisar por Opportunities"
+            },
+            "created": "Um novo Opportunities foi criado com o identificador {{ param }}",
+            "updated": "Um Opportunities foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Opportunities foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Opportunities {{ id }}?"
+            },
+            "detail": {
+                "title": "Opportunities"
+            },
+            "opportunityCode": "Opportunity Code",
+            "opportunitiesType": "Opportunities Type",
+            "name": "Name",
+            "status": "Status",
+            "area": "Area",
+            "externalId": "External Id",
+            "highlighted": "Highlighted",
+            "description": "Description",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "quantity": "Quantity",
+            "logoDesktopUrl": "Logo Desktop Url",
+            "logoMobileUrl": "Logo Mobile Url",
+            "hiringType": "Hiring Type",
+            "slug": "Slug",
+            "places": "Places",
+            "benefits": "Benefits",
+            "requests": "Requests",
+            "customers": "Customers"
+        }
+    }
+}

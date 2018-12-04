@@ -1,0 +1,60 @@
+{
+    "name": "Customers",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "documentCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "companySize",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "customersCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logoDesktopUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logoMobileUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "portal",
+            "otherEntityName": "portal",
+            "otherEntityRelationshipName": "customers"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "opportunities",
+            "otherEntityName": "opportunities",
+            "otherEntityRelationshipName": "customers"
+        }
+    ],
+    "changelogDate": "20181204164643",
+    "entityTableName": "customers",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

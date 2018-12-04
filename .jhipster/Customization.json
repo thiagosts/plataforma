@@ -1,0 +1,23 @@
+{
+    "name": "Customization",
+    "fields": [
+        {
+            "fieldName": "customCSS",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "urlLogo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181204164656",
+    "entityTableName": "customization",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

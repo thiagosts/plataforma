@@ -1,0 +1,31 @@
+{
+    "plataformaApp": {
+        "matchings": {
+            "home": {
+                "title": "Matchings",
+                "createLabel": "Criar novo Matchings",
+                "createOrEditLabel": "Criar ou editar Matchings",
+                "search": "Pesquisar por Matchings"
+            },
+            "created": "Um novo Matchings foi criado com o identificador {{ param }}",
+            "updated": "Um Matchings foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Matchings foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Matchings {{ id }}?"
+            },
+            "detail": {
+                "title": "Matchings"
+            },
+            "name": "Name",
+            "type": "Type",
+            "createdDate": "Created Date",
+            "lastModifiedDate": "Last Modified Date",
+            "time": "Time",
+            "isDefault": "Is Default",
+            "customization": "Customization",
+            "questions": "Questions",
+            "results": "Results",
+            "matchingsjob": "Matchingsjob"
+        }
+    }
+}

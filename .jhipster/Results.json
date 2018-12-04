@@ -1,0 +1,50 @@
+{
+    "name": "Results",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "finalTime",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "maxTime",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "resultsdetails",
+            "otherEntityName": "resultsDetails",
+            "otherEntityRelationshipName": "results"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "statuscandidates",
+            "otherEntityName": "statusCandidates",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "matchings",
+            "otherEntityName": "matchings",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164650",
+    "entityTableName": "results",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

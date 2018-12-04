@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-results-heading" jhiTranslate="plataformaApp.results.home.createOrEditLabel">Create or edit a Results</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!results.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="results.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.value" for="field_value">Value</label>
+                    <input type="number" class="form-control" name="value" id="field_value"
+                        [(ngModel)]="results.value" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.startTime" for="field_startTime">Start Time</label>
+                    <div class="d-flex">
+                        <input id="field_startTime" type="datetime-local" class="form-control" name="startTime" [(ngModel)]="startTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.finalTime" for="field_finalTime">Final Time</label>
+                    <div class="d-flex">
+                        <input id="field_finalTime" type="datetime-local" class="form-control" name="finalTime" [(ngModel)]="finalTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.maxTime" for="field_maxTime">Max Time</label>
+                    <div class="d-flex">
+                        <input id="field_maxTime" type="datetime-local" class="form-control" name="maxTime" [(ngModel)]="maxTime"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.statuscandidates" for="field_statuscandidates">Statuscandidates</label>
+                    <select class="form-control" id="field_statuscandidates" name="statuscandidates" [(ngModel)]="results.statuscandidatesId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusCandidatesOption.id" *ngFor="let statusCandidatesOption of statuscandidates; trackBy: trackStatusCandidatesById">{{statusCandidatesOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.results.matchings" for="field_matchings">Matchings</label>
+                    <select class="form-control" id="field_matchings" name="matchings" [(ngModel)]="results.matchingsId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="matchingsOption.id" *ngFor="let matchingsOption of matchings; trackBy: trackMatchingsById">{{matchingsOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

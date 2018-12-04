@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="templates">
+            <h2><span jhiTranslate="plataformaApp.templates.detail.title">Templates</span> {{templates.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.templates.name">Name</span></dt>
+                <dd>
+                    <span>{{templates.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.templates.customCss">Custom Css</span></dt>
+                <dd>
+                    <span>{{templates.customCss}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/templates', templates.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

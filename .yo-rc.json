@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.connekt.plataforma",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "plataforma",
+    "packageName": "br.com.connekt.plataforma",
+    "packageFolder": "br/com/connekt/plataforma",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MDA2N2JiOGUzZTc2ZWIzM2ZjODcxZDY2ZWNhODFjODk4ODM5MWVkOTAwY2ZhNDZkODFlNTQ5MzhkN2FjMjU4NzI1YTQyYjYyNzU4N2FiNjVlNjEwZmFmMzlhYWJhYTYxMjY2YTI2ZmFkNjk3MmI5NDAyMGQ3MzQ0YTg0NDA2NTU=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "pt-br"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "plataformaApp": {
+        "preferences": {
+            "home": {
+                "title": "Preferences",
+                "createLabel": "Criar novo Preferences",
+                "createOrEditLabel": "Criar ou editar Preferences",
+                "search": "Pesquisar por Preferences"
+            },
+            "created": "Um novo Preferences foi criado com o identificador {{ param }}",
+            "updated": "Um Preferences foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Preferences foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Preferences {{ id }}?"
+            },
+            "detail": {
+                "title": "Preferences"
+            },
+            "area": "Area",
+            "candidates": "Candidates"
+        }
+    }
+}

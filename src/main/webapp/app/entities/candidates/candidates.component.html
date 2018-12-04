@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="plataformaApp.candidates.home.title">Candidates</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-candidates" [routerLink]="['/candidates/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="plataformaApp.candidates.home.createLabel">
+            Create new Candidates
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'plataformaApp.candidates.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="candidates">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="plataformaApp.candidates.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span jhiTranslate="plataformaApp.candidates.email">Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="celPhone"><span jhiTranslate="plataformaApp.candidates.celPhone">Cel Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="area"><span jhiTranslate="plataformaApp.candidates.area">Area</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataOfBirth"><span jhiTranslate="plataformaApp.candidates.dataOfBirth">Data Of Birth</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="occupation"><span jhiTranslate="plataformaApp.candidates.occupation">Occupation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pictureUrl"><span jhiTranslate="plataformaApp.candidates.pictureUrl">Picture Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="salesForceId"><span jhiTranslate="plataformaApp.candidates.salesForceId">Sales Force Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="placesId"><span jhiTranslate="plataformaApp.candidates.places">Places</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let candidates of candidates ;trackBy: trackId">
+                <td><a [routerLink]="['/candidates', candidates.id, 'view' ]">{{candidates.id}}</a></td>
+                <td>{{candidates.name}}</td>
+                <td>{{candidates.email}}</td>
+                <td>{{candidates.celPhone}}</td>
+                <td>{{candidates.area}}</td>
+                <td>{{candidates.dataOfBirth | date:'medium'}}</td>
+                <td>{{candidates.occupation}}</td>
+                <td>{{candidates.pictureUrl}}</td>
+                <td>{{candidates.salesForceId}}</td>
+                <td>
+                    <div *ngIf="candidates.placesId">
+                        <a [routerLink]="['../places', candidates.placesId , 'view' ]" >{{candidates.placesId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/candidates', candidates.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/candidates', candidates.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'candidates/'+ candidates.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="candidates && candidates.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

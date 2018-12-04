@@ -1,0 +1,28 @@
+{
+    "plataformaApp": {
+        "results": {
+            "home": {
+                "title": "Results",
+                "createLabel": "Criar novo Results",
+                "createOrEditLabel": "Criar ou editar Results",
+                "search": "Pesquisar por Results"
+            },
+            "created": "Um novo Results foi criado com o identificador {{ param }}",
+            "updated": "Um Results foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Results foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Results {{ id }}?"
+            },
+            "detail": {
+                "title": "Results"
+            },
+            "value": "Value",
+            "startTime": "Start Time",
+            "finalTime": "Final Time",
+            "maxTime": "Max Time",
+            "resultsdetails": "Resultsdetails",
+            "statuscandidates": "Statuscandidates",
+            "matchings": "Matchings"
+        }
+    }
+}

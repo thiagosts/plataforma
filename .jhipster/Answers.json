@@ -1,0 +1,40 @@
+{
+    "name": "Answers",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "value",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "maxSize",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "resultsDetails",
+            "otherEntityName": "resultsDetails",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "questions",
+            "otherEntityName": "questions",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164655",
+    "entityTableName": "answers",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

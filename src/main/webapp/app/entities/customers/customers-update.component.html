@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-customers-heading" jhiTranslate="plataformaApp.customers.home.createOrEditLabel">Create or edit a Customers</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!customers.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="customers.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="customers.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.documentCode" for="field_documentCode">Document Code</label>
+                    <input type="text" class="form-control" name="documentCode" id="field_documentCode"
+                        [(ngModel)]="customers.documentCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.companySize" for="field_companySize">Company Size</label>
+                    <input type="text" class="form-control" name="companySize" id="field_companySize"
+                        [(ngModel)]="customers.companySize" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="customers.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.customersCode" for="field_customersCode">Customers Code</label>
+                    <input type="text" class="form-control" name="customersCode" id="field_customersCode"
+                        [(ngModel)]="customers.customersCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.logoDesktopUrl" for="field_logoDesktopUrl">Logo Desktop Url</label>
+                    <input type="text" class="form-control" name="logoDesktopUrl" id="field_logoDesktopUrl"
+                        [(ngModel)]="customers.logoDesktopUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.logoMobileUrl" for="field_logoMobileUrl">Logo Mobile Url</label>
+                    <input type="text" class="form-control" name="logoMobileUrl" id="field_logoMobileUrl"
+                        [(ngModel)]="customers.logoMobileUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.customers.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                        [(ngModel)]="customers.active" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

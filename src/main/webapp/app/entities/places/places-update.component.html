@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-places-heading" jhiTranslate="plataformaApp.places.home.createOrEditLabel">Create or edit a Places</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!places.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="places.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="places.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.district" for="field_district">District</label>
+                    <input type="text" class="form-control" name="district" id="field_district"
+                        [(ngModel)]="places.district" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.city" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                        [(ngModel)]="places.city" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.zone" for="field_zone">Zone</label>
+                    <input type="text" class="form-control" name="zone" id="field_zone"
+                        [(ngModel)]="places.zone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.stateProvince" for="field_stateProvince">State Province</label>
+                    <input type="text" class="form-control" name="stateProvince" id="field_stateProvince"
+                        [(ngModel)]="places.stateProvince" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                        [(ngModel)]="places.country" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.zipCode" for="field_zipCode">Zip Code</label>
+                    <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                        [(ngModel)]="places.zipCode" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.places.opportunities" for="field_opportunities">Opportunities</label>
+                    <select class="form-control" id="field_opportunities" name="opportunities" [(ngModel)]="places.opportunitiesId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="opportunitiesOption.id" *ngFor="let opportunitiesOption of opportunities; trackBy: trackOpportunitiesById">{{opportunitiesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

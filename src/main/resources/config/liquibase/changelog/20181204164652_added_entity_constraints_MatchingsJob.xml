@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MatchingsJob.
+    -->
+    <changeSet id="20181204164652-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="opportunities_id"
+                                 baseTableName="matchings_job"
+                                 constraintName="fk_matchings_job_opportunities_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="opportunities"/>
+
+    </changeSet>
+</databaseChangeLog>

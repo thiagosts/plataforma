@@ -1,0 +1,23 @@
+{
+    "plataformaApp": {
+        "customization": {
+            "home": {
+                "title": "Customizations",
+                "createLabel": "Criar novo Customization",
+                "createOrEditLabel": "Criar ou editar Customization",
+                "search": "Pesquisar por Customization"
+            },
+            "created": "Um novo Customization foi criado com o identificador {{ param }}",
+            "updated": "Um Customization foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Customization foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Customization {{ id }}?"
+            },
+            "detail": {
+                "title": "Customization"
+            },
+            "customCSS": "Custom CSS",
+            "urlLogo": "Url Logo"
+        }
+    }
+}

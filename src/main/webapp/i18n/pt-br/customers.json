@@ -1,0 +1,31 @@
+{
+    "plataformaApp": {
+        "customers": {
+            "home": {
+                "title": "Customers",
+                "createLabel": "Criar novo Customers",
+                "createOrEditLabel": "Criar ou editar Customers",
+                "search": "Pesquisar por Customers"
+            },
+            "created": "Um novo Customers foi criado com o identificador {{ param }}",
+            "updated": "Um Customers foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Customers foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Customers {{ id }}?"
+            },
+            "detail": {
+                "title": "Customers"
+            },
+            "name": "Name",
+            "documentCode": "Document Code",
+            "companySize": "Company Size",
+            "description": "Description",
+            "customersCode": "Customers Code",
+            "logoDesktopUrl": "Logo Desktop Url",
+            "logoMobileUrl": "Logo Mobile Url",
+            "active": "Active",
+            "portal": "Portal",
+            "opportunities": "Opportunities"
+        }
+    }
+}

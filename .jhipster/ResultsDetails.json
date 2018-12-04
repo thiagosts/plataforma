@@ -1,0 +1,40 @@
+{
+    "name": "ResultsDetails",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "result",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "answers",
+            "otherEntityName": "answers",
+            "otherEntityRelationshipName": "resultsDetails"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "results",
+            "otherEntityName": "results",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164651",
+    "entityTableName": "results_details",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,25 @@
+{
+    "plataformaApp": {
+        "portal": {
+            "home": {
+                "title": "Portals",
+                "createLabel": "Criar novo Portal",
+                "createOrEditLabel": "Criar ou editar Portal",
+                "search": "Pesquisar por Portal"
+            },
+            "created": "Um novo Portal foi criado com o identificador {{ param }}",
+            "updated": "Um Portal foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Portal foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Portal {{ id }}?"
+            },
+            "detail": {
+                "title": "Portal"
+            },
+            "name": "Name",
+            "type": "Type",
+            "templates": "Templates",
+            "customers": "Customers"
+        }
+    }
+}

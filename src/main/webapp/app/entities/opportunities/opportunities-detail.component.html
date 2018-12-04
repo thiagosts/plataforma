@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="opportunities">
+            <h2><span jhiTranslate="plataformaApp.opportunities.detail.title">Opportunities</span> {{opportunities.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.opportunities.opportunityCode">Opportunity Code</span></dt>
+                <dd>
+                    <span>{{opportunities.opportunityCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.opportunitiesType">Opportunities Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'plataformaApp.OpportunitiesTypeEnums.' + opportunities.opportunitiesType}}">{{opportunities.opportunitiesType}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.name">Name</span></dt>
+                <dd>
+                    <span>{{opportunities.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.status">Status</span></dt>
+                <dd>
+                    <span>{{opportunities.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.area">Area</span></dt>
+                <dd>
+                    <span>{{opportunities.area}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.externalId">External Id</span></dt>
+                <dd>
+                    <span>{{opportunities.externalId}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.highlighted">Highlighted</span></dt>
+                <dd>
+                    <span>{{opportunities.highlighted}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.description">Description</span></dt>
+                <dd>
+                    <span>{{opportunities.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{opportunities.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{opportunities.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{opportunities.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.logoDesktopUrl">Logo Desktop Url</span></dt>
+                <dd>
+                    <span>{{opportunities.logoDesktopUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.logoMobileUrl">Logo Mobile Url</span></dt>
+                <dd>
+                    <span>{{opportunities.logoMobileUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.hiringType">Hiring Type</span></dt>
+                <dd>
+                    <span>{{opportunities.hiringType}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.slug">Slug</span></dt>
+                <dd>
+                    <span>{{opportunities.slug}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.opportunities.customers">Customers</span></dt>
+                <dd>
+                    <div *ngIf="opportunities.customersId">
+                        <a [routerLink]="['/customers', opportunities.customersId, 'view']">{{opportunities.customersId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/opportunities', opportunities.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

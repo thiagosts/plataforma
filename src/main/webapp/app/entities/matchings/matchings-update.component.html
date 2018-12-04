@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-matchings-heading" jhiTranslate="plataformaApp.matchings.home.createOrEditLabel">Create or edit a Matchings</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!matchings.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="matchings.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="matchings.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="matchings.type" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" [(ngModel)]="createdDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.lastModifiedDate" for="field_lastModifiedDate">Last Modified Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastModifiedDate" type="datetime-local" class="form-control" name="lastModifiedDate" [(ngModel)]="lastModifiedDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.time" for="field_time">Time</label>
+                    <input type="number" class="form-control" name="time" id="field_time"
+                        [(ngModel)]="matchings.time" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.isDefault" for="field_isDefault">Is Default</label>
+                    <input type="text" class="form-control" name="isDefault" id="field_isDefault"
+                        [(ngModel)]="matchings.isDefault" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.customization" for="field_customization">Customization</label>
+                    <select class="form-control" id="field_customization" name="customization" [(ngModel)]="matchings.customizationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customizationOption.id" *ngFor="let customizationOption of customizations; trackBy: trackCustomizationById">{{customizationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.matchings.matchingsjob" for="field_matchingsjob">Matchingsjob</label>
+                    <select class="form-control" id="field_matchingsjob" name="matchingsjob" [(ngModel)]="matchings.matchingsjobId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="matchingsJobOption.id" *ngFor="let matchingsJobOption of matchingsjobs; trackBy: trackMatchingsJobById">{{matchingsJobOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

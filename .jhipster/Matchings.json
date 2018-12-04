@@ -1,0 +1,66 @@
+{
+    "name": "Matchings",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "lastModifiedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "isDefault",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "customization",
+            "otherEntityName": "customization",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "matchings"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "questions",
+            "otherEntityName": "questions",
+            "otherEntityRelationshipName": "matchings"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "results",
+            "otherEntityName": "results",
+            "otherEntityRelationshipName": "matchings"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "matchingsjob",
+            "otherEntityName": "matchingsJob",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164653",
+    "entityTableName": "matchings",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "StatusCandidates",
+    "fields": [
+        {
+            "fieldName": "stageName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subStageName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "candidates",
+            "otherEntityName": "candidates",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "results",
+            "otherEntityName": "results",
+            "otherEntityRelationshipName": "statuscandidates"
+        }
+    ],
+    "changelogDate": "20181204164649",
+    "entityTableName": "status_candidates",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,101 @@
+{
+    "name": "Opportunities",
+    "fields": [
+        {
+            "fieldName": "opportunityCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "opportunitiesType",
+            "fieldType": "OpportunitiesTypeEnums",
+            "fieldValues": "INTERNAL,EXTERNAL,CONFIDENCIAL"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "externalId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "highlighted",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "quantity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "logoDesktopUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logoMobileUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hiringType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "slug",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "places",
+            "otherEntityName": "places",
+            "otherEntityRelationshipName": "opportunities"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "benefits",
+            "otherEntityName": "benefits",
+            "otherEntityRelationshipName": "opportunities"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "requests",
+            "otherEntityName": "requests",
+            "otherEntityRelationshipName": "opportunities"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customers",
+            "otherEntityName": "customers",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164639",
+    "entityTableName": "opportunities",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

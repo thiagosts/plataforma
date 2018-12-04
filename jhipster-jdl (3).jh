@@ -1,0 +1,185 @@
+entity Opportunities {	
+	opportunityCode String,
+    opportunitiesType OpportunitiesTypeEnums,
+    name String,
+    status String,
+    area String,
+    externalId String,
+    highlighted Boolean,
+    description String,
+    startDate Instant,
+    endDate Instant,
+    quantity Integer,
+    logoDesktopUrl String,
+	logoMobileUrl String,
+    hiringType String,
+    slug String
+}
+
+enum OpportunitiesTypeEnums {
+    INTERNAL, 
+    EXTERNAL, 
+    CONFIDENCIAL
+}
+
+entity Requests {
+ 	name String
+}
+
+entity Places {
+	address String,
+    district String,
+    city String,
+    zone String,
+	stateProvince String,
+    country String,
+    zipCode String
+}
+
+entity Benefits {
+	name String,
+    icon String
+}
+
+entity Customers {
+    name String,
+	documentCode String,
+	companySize String,
+	description String,
+	customersCode String,
+	logoDesktopUrl String,
+	logoMobileUrl String,
+    active Boolean    
+}
+
+entity Portal {
+  name String,
+  type String 
+}
+
+entity Templates {
+	name String,
+    customCss String
+}
+
+entity Resources {
+	name String,
+    linkUrl String,
+    iconUrl String,
+    type String,
+    title String,
+    description String
+}
+
+entity Candidates {	
+    name String,
+    email String,
+    celPhone String,
+    area String,
+    dataOfBirth Instant,
+    occupation String,
+    pictureUrl String,
+    salesForceId String
+}
+
+entity Preferences {
+    area String
+}
+
+entity StatusCandidates {
+	stageName String,
+    source String,
+    subStageName String      
+}
+
+entity Results {
+	value Float,
+	startTime Instant,
+	finalTime Instant,
+	maxTime Instant
+}
+
+entity ResultsDetails {
+	value BigDecimal,
+	result String,
+	createdDate Instant
+}
+
+entity MatchingsJob {
+	cutNote Float,
+    order Integer,
+    require String
+}
+
+entity Matchings {
+	name String,
+    type String,
+	createdDate Instant,
+	lastModifiedDate Instant,
+	time BigDecimal,
+	isDefault String	
+}
+
+entity Questions {
+	name String,
+    description String,
+    type String,
+    order Integer,
+    require String
+}
+
+entity Answers {
+	name String,
+    value Integer,
+    maxSize Integer    
+}
+
+entity Customization {
+	customCSS String,
+    urlLogo String
+}
+
+relationship ManyToOne {
+	Resources{templates} to Templates,
+    Opportunities{customers} to Customers{opportunities}
+}
+
+relationship OneToMany {
+	Opportunities{places} to Places,
+	Opportunities{benefits} to Benefits,
+    Opportunities{requests} to Requests
+}
+
+relationship OneToMany {
+	Candidates{statuscandidates} to StatusCandidates,
+    Candidates{preferences} to Preferences,
+    StatusCandidates{results} to Results{statuscandidates},
+    Results{resultsdetails} to ResultsDetails{results},
+    ResultsDetails{answers} to Answers
+}
+
+relationship OneToMany {
+	Matchings{questions} to Questions{matchings},
+    Matchings{results} to Results{matchings},
+    MatchingsJob{matchings} to Matchings{matchingsjob},
+    Questions{answers} to Answers{questions}
+}
+
+relationship OneToMany {
+	Customers{portal} to Portal{customers}    
+}  
+
+relationship OneToOne {
+	Matchings{customization} to Customization,
+    Candidates{places} to Places,
+    MatchingsJob{opportunities} to Opportunities,
+    Portal{templates} to Templates
+}
+
+dto * with mapstruct 
+
+paginate * with pagination except Customers
+
+paginate Customers with infinite-scroll
+
+service all with serviceImpl

@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-candidates-heading" jhiTranslate="plataformaApp.candidates.home.createOrEditLabel">Create or edit a Candidates</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!candidates.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="candidates.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="candidates.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="candidates.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.celPhone" for="field_celPhone">Cel Phone</label>
+                    <input type="text" class="form-control" name="celPhone" id="field_celPhone"
+                        [(ngModel)]="candidates.celPhone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.area" for="field_area">Area</label>
+                    <input type="text" class="form-control" name="area" id="field_area"
+                        [(ngModel)]="candidates.area" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.dataOfBirth" for="field_dataOfBirth">Data Of Birth</label>
+                    <div class="d-flex">
+                        <input id="field_dataOfBirth" type="datetime-local" class="form-control" name="dataOfBirth" [(ngModel)]="dataOfBirth"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.occupation" for="field_occupation">Occupation</label>
+                    <input type="text" class="form-control" name="occupation" id="field_occupation"
+                        [(ngModel)]="candidates.occupation" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.pictureUrl" for="field_pictureUrl">Picture Url</label>
+                    <input type="text" class="form-control" name="pictureUrl" id="field_pictureUrl"
+                        [(ngModel)]="candidates.pictureUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.salesForceId" for="field_salesForceId">Sales Force Id</label>
+                    <input type="text" class="form-control" name="salesForceId" id="field_salesForceId"
+                        [(ngModel)]="candidates.salesForceId" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.candidates.places" for="field_places">Places</label>
+                    <select class="form-control" id="field_places" name="places" [(ngModel)]="candidates.placesId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="placesOption.id" *ngFor="let placesOption of places; trackBy: trackPlacesById">{{placesOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

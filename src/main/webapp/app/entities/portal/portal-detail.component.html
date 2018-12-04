@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="portal">
+            <h2><span jhiTranslate="plataformaApp.portal.detail.title">Portal</span> {{portal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.portal.name">Name</span></dt>
+                <dd>
+                    <span>{{portal.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.portal.type">Type</span></dt>
+                <dd>
+                    <span>{{portal.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.portal.templates">Templates</span></dt>
+                <dd>
+                    <div *ngIf="portal.templatesId">
+                        <a [routerLink]="['/templates', portal.templatesId, 'view']">{{portal.templatesId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.portal.customers">Customers</span></dt>
+                <dd>
+                    <div *ngIf="portal.customersId">
+                        <a [routerLink]="['/customers', portal.customersId, 'view']">{{portal.customersId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/portal', portal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

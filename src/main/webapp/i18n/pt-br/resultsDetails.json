@@ -1,0 +1,26 @@
+{
+    "plataformaApp": {
+        "resultsDetails": {
+            "home": {
+                "title": "Results Details",
+                "createLabel": "Criar novo Results Details",
+                "createOrEditLabel": "Criar ou editar Results Details",
+                "search": "Pesquisar por Results Details"
+            },
+            "created": "Um novo Results Details foi criado com o identificador {{ param }}",
+            "updated": "Um Results Details foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Results Details foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Results Details {{ id }}?"
+            },
+            "detail": {
+                "title": "Results Details"
+            },
+            "value": "Value",
+            "result": "Result",
+            "createdDate": "Created Date",
+            "answers": "Answers",
+            "results": "Results"
+        }
+    }
+}

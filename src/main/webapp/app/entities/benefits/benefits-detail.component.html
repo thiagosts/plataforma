@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="benefits">
+            <h2><span jhiTranslate="plataformaApp.benefits.detail.title">Benefits</span> {{benefits.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.benefits.name">Name</span></dt>
+                <dd>
+                    <span>{{benefits.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.benefits.icon">Icon</span></dt>
+                <dd>
+                    <span>{{benefits.icon}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.benefits.opportunities">Opportunities</span></dt>
+                <dd>
+                    <div *ngIf="benefits.opportunitiesId">
+                        <a [routerLink]="['/opportunities', benefits.opportunitiesId, 'view']">{{benefits.opportunitiesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/benefits', benefits.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

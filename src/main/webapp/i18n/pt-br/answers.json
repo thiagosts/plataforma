@@ -1,0 +1,26 @@
+{
+    "plataformaApp": {
+        "answers": {
+            "home": {
+                "title": "Answers",
+                "createLabel": "Criar novo Answers",
+                "createOrEditLabel": "Criar ou editar Answers",
+                "search": "Pesquisar por Answers"
+            },
+            "created": "Um novo Answers foi criado com o identificador {{ param }}",
+            "updated": "Um Answers foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Answers foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Answers {{ id }}?"
+            },
+            "detail": {
+                "title": "Answers"
+            },
+            "name": "Name",
+            "value": "Value",
+            "maxSize": "Max Size",
+            "resultsDetails": "Results Details",
+            "questions": "Questions"
+        }
+    }
+}

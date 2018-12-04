@@ -1,0 +1,31 @@
+{
+    "plataformaApp": {
+        "matchings": {
+            "home": {
+                "title": "Matchings",
+                "createLabel": "Create a new Matchings",
+                "createOrEditLabel": "Create or edit a Matchings",
+                "search": "Search for Matchings"
+            },
+            "created": "A new Matchings is created with identifier {{ param }}",
+            "updated": "A Matchings is updated with identifier {{ param }}",
+            "deleted": "A Matchings is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Matchings {{ id }}?"
+            },
+            "detail": {
+                "title": "Matchings"
+            },
+            "name": "Name",
+            "type": "Type",
+            "createdDate": "Created Date",
+            "lastModifiedDate": "Last Modified Date",
+            "time": "Time",
+            "isDefault": "Is Default",
+            "customization": "Customization",
+            "questions": "Questions",
+            "results": "Results",
+            "matchingsjob": "Matchingsjob"
+        }
+    }
+}

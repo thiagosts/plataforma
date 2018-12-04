@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customization">
+            <h2><span jhiTranslate="plataformaApp.customization.detail.title">Customization</span> {{customization.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.customization.customCSS">Custom CSS</span></dt>
+                <dd>
+                    <span>{{customization.customCSS}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.customization.urlLogo">Url Logo</span></dt>
+                <dd>
+                    <span>{{customization.urlLogo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customization', customization.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

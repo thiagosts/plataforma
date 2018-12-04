@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="matchings">
+            <h2><span jhiTranslate="plataformaApp.matchings.detail.title">Matchings</span> {{matchings.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.matchings.name">Name</span></dt>
+                <dd>
+                    <span>{{matchings.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.type">Type</span></dt>
+                <dd>
+                    <span>{{matchings.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{matchings.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>
+                    <span>{{matchings.lastModifiedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.time">Time</span></dt>
+                <dd>
+                    <span>{{matchings.time}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.isDefault">Is Default</span></dt>
+                <dd>
+                    <span>{{matchings.isDefault}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.customization">Customization</span></dt>
+                <dd>
+                    <div *ngIf="matchings.customizationId">
+                        <a [routerLink]="['/customization', matchings.customizationId, 'view']">{{matchings.customizationId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchings.matchingsjob">Matchingsjob</span></dt>
+                <dd>
+                    <div *ngIf="matchings.matchingsjobId">
+                        <a [routerLink]="['/matchings-job', matchings.matchingsjobId, 'view']">{{matchings.matchingsjobId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/matchings', matchings.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "plataformaApp": {
+        "statusCandidates": {
+            "home": {
+                "title": "Status Candidates",
+                "createLabel": "Criar novo Status Candidates",
+                "createOrEditLabel": "Criar ou editar Status Candidates",
+                "search": "Pesquisar por Status Candidates"
+            },
+            "created": "Um novo Status Candidates foi criado com o identificador {{ param }}",
+            "updated": "Um Status Candidates foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Status Candidates foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Status Candidates {{ id }}?"
+            },
+            "detail": {
+                "title": "Status Candidates"
+            },
+            "stageName": "Stage Name",
+            "source": "Source",
+            "subStageName": "Sub Stage Name",
+            "candidates": "Candidates",
+            "results": "Results"
+        }
+    }
+}

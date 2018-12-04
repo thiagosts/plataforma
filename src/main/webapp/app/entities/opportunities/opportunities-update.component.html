@@ -1,0 +1,113 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-opportunities-heading" jhiTranslate="plataformaApp.opportunities.home.createOrEditLabel">Create or edit a Opportunities</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!opportunities.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="opportunities.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.opportunityCode" for="field_opportunityCode">Opportunity Code</label>
+                    <input type="text" class="form-control" name="opportunityCode" id="field_opportunityCode"
+                        [(ngModel)]="opportunities.opportunityCode" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.opportunitiesType" for="field_opportunitiesType">Opportunities Type</label>
+                    <select class="form-control" name="opportunitiesType" [(ngModel)]="opportunities.opportunitiesType" id="field_opportunitiesType" >
+                        <option value="INTERNAL">{{'plataformaApp.OpportunitiesTypeEnums.INTERNAL' | translate}}</option>
+                        <option value="EXTERNAL">{{'plataformaApp.OpportunitiesTypeEnums.EXTERNAL' | translate}}</option>
+                        <option value="CONFIDENCIAL">{{'plataformaApp.OpportunitiesTypeEnums.CONFIDENCIAL' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="opportunities.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                        [(ngModel)]="opportunities.status" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.area" for="field_area">Area</label>
+                    <input type="text" class="form-control" name="area" id="field_area"
+                        [(ngModel)]="opportunities.area" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.externalId" for="field_externalId">External Id</label>
+                    <input type="text" class="form-control" name="externalId" id="field_externalId"
+                        [(ngModel)]="opportunities.externalId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.highlighted" for="field_highlighted">Highlighted</label>
+                    <input type="checkbox" class="form-control" name="highlighted" id="field_highlighted"
+                        [(ngModel)]="opportunities.highlighted" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="opportunities.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="endDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.quantity" for="field_quantity">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" id="field_quantity"
+                        [(ngModel)]="opportunities.quantity" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.logoDesktopUrl" for="field_logoDesktopUrl">Logo Desktop Url</label>
+                    <input type="text" class="form-control" name="logoDesktopUrl" id="field_logoDesktopUrl"
+                        [(ngModel)]="opportunities.logoDesktopUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.logoMobileUrl" for="field_logoMobileUrl">Logo Mobile Url</label>
+                    <input type="text" class="form-control" name="logoMobileUrl" id="field_logoMobileUrl"
+                        [(ngModel)]="opportunities.logoMobileUrl" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.hiringType" for="field_hiringType">Hiring Type</label>
+                    <input type="text" class="form-control" name="hiringType" id="field_hiringType"
+                        [(ngModel)]="opportunities.hiringType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.slug" for="field_slug">Slug</label>
+                    <input type="text" class="form-control" name="slug" id="field_slug"
+                        [(ngModel)]="opportunities.slug" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="plataformaApp.opportunities.customers" for="field_customers">Customers</label>
+                    <select class="form-control" id="field_customers" name="customers" [(ngModel)]="opportunities.customersId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customersOption.id" *ngFor="let customersOption of customers; trackBy: trackCustomersById">{{customersOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

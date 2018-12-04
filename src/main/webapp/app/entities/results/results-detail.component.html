@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="results">
+            <h2><span jhiTranslate="plataformaApp.results.detail.title">Results</span> {{results.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.results.value">Value</span></dt>
+                <dd>
+                    <span>{{results.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.results.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{results.startTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.results.finalTime">Final Time</span></dt>
+                <dd>
+                    <span>{{results.finalTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.results.maxTime">Max Time</span></dt>
+                <dd>
+                    <span>{{results.maxTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.results.statuscandidates">Statuscandidates</span></dt>
+                <dd>
+                    <div *ngIf="results.statuscandidatesId">
+                        <a [routerLink]="['/status-candidates', results.statuscandidatesId, 'view']">{{results.statuscandidatesId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.results.matchings">Matchings</span></dt>
+                <dd>
+                    <div *ngIf="results.matchingsId">
+                        <a [routerLink]="['/matchings', results.matchingsId, 'view']">{{results.matchingsId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/results', results.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

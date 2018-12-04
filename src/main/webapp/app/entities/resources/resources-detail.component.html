@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="resources">
+            <h2><span jhiTranslate="plataformaApp.resources.detail.title">Resources</span> {{resources.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.resources.name">Name</span></dt>
+                <dd>
+                    <span>{{resources.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.linkUrl">Link Url</span></dt>
+                <dd>
+                    <span>{{resources.linkUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.iconUrl">Icon Url</span></dt>
+                <dd>
+                    <span>{{resources.iconUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.type">Type</span></dt>
+                <dd>
+                    <span>{{resources.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.title">Title</span></dt>
+                <dd>
+                    <span>{{resources.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.description">Description</span></dt>
+                <dd>
+                    <span>{{resources.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.resources.templates">Templates</span></dt>
+                <dd>
+                    <div *ngIf="resources.templatesId">
+                        <a [routerLink]="['/templates', resources.templatesId, 'view']">{{resources.templatesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/resources', resources.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

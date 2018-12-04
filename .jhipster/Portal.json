@@ -1,0 +1,38 @@
+{
+    "name": "Portal",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "templates",
+            "otherEntityName": "templates",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "portal"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "customers",
+            "otherEntityName": "customers",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164644",
+    "entityTableName": "portal",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

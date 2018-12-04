@@ -1,0 +1,23 @@
+{
+    "plataformaApp": {
+        "requests": {
+            "home": {
+                "title": "Requests",
+                "createLabel": "Criar novo Requests",
+                "createOrEditLabel": "Criar ou editar Requests",
+                "search": "Pesquisar por Requests"
+            },
+            "created": "Um novo Requests foi criado com o identificador {{ param }}",
+            "updated": "Um Requests foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Requests foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Requests {{ id }}?"
+            },
+            "detail": {
+                "title": "Requests"
+            },
+            "name": "Name",
+            "opportunities": "Opportunities"
+        }
+    }
+}

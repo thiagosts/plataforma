@@ -1,0 +1,28 @@
+{
+    "plataformaApp": {
+        "resources": {
+            "home": {
+                "title": "Resources",
+                "createLabel": "Criar novo Resources",
+                "createOrEditLabel": "Criar ou editar Resources",
+                "search": "Pesquisar por Resources"
+            },
+            "created": "Um novo Resources foi criado com o identificador {{ param }}",
+            "updated": "Um Resources foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Resources foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Resources {{ id }}?"
+            },
+            "detail": {
+                "title": "Resources"
+            },
+            "name": "Name",
+            "linkUrl": "Link Url",
+            "iconUrl": "Icon Url",
+            "type": "Type",
+            "title": "Title",
+            "description": "Description",
+            "templates": "Templates"
+        }
+    }
+}

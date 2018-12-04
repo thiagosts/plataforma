@@ -1,0 +1,29 @@
+{
+    "plataformaApp": {
+        "places": {
+            "home": {
+                "title": "Places",
+                "createLabel": "Create a new Places",
+                "createOrEditLabel": "Create or edit a Places",
+                "search": "Search for Places"
+            },
+            "created": "A new Places is created with identifier {{ param }}",
+            "updated": "A Places is updated with identifier {{ param }}",
+            "deleted": "A Places is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Places {{ id }}?"
+            },
+            "detail": {
+                "title": "Places"
+            },
+            "address": "Address",
+            "district": "District",
+            "city": "City",
+            "zone": "Zone",
+            "stateProvince": "State Province",
+            "country": "Country",
+            "zipCode": "Zip Code",
+            "opportunities": "Opportunities"
+        }
+    }
+}

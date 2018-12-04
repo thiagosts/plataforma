@@ -1,0 +1,32 @@
+{
+    "plataformaApp": {
+        "candidates": {
+            "home": {
+                "title": "Candidates",
+                "createLabel": "Create a new Candidates",
+                "createOrEditLabel": "Create or edit a Candidates",
+                "search": "Search for Candidates"
+            },
+            "created": "A new Candidates is created with identifier {{ param }}",
+            "updated": "A Candidates is updated with identifier {{ param }}",
+            "deleted": "A Candidates is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Candidates {{ id }}?"
+            },
+            "detail": {
+                "title": "Candidates"
+            },
+            "name": "Name",
+            "email": "Email",
+            "celPhone": "Cel Phone",
+            "area": "Area",
+            "dataOfBirth": "Data Of Birth",
+            "occupation": "Occupation",
+            "pictureUrl": "Picture Url",
+            "salesForceId": "Sales Force Id",
+            "places": "Places",
+            "statuscandidates": "Statuscandidates",
+            "preferences": "Preferences"
+        }
+    }
+}

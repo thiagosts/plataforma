@@ -1,0 +1,46 @@
+{
+    "name": "Resources",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "linkUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "iconUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "templates",
+            "otherEntityName": "templates",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164646",
+    "entityTableName": "resources",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,23 @@
+{
+    "plataformaApp": {
+        "templates": {
+            "home": {
+                "title": "Templates",
+                "createLabel": "Create a new Templates",
+                "createOrEditLabel": "Create or edit a Templates",
+                "search": "Search for Templates"
+            },
+            "created": "A new Templates is created with identifier {{ param }}",
+            "updated": "A Templates is updated with identifier {{ param }}",
+            "deleted": "A Templates is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Templates {{ id }}?"
+            },
+            "detail": {
+                "title": "Templates"
+            },
+            "name": "Name",
+            "customCss": "Custom Css"
+        }
+    }
+}

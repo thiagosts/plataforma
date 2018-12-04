@@ -1,0 +1,68 @@
+{
+    "name": "Candidates",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celPhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataOfBirth",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "occupation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pictureUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "salesForceId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "places",
+            "otherEntityName": "places",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "candidates"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "statuscandidates",
+            "otherEntityName": "statusCandidates",
+            "otherEntityRelationshipName": "candidates"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "preferences",
+            "otherEntityName": "preferences",
+            "otherEntityRelationshipName": "candidates"
+        }
+    ],
+    "changelogDate": "20181204164647",
+    "entityTableName": "candidates",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

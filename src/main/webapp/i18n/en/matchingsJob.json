@@ -1,0 +1,26 @@
+{
+    "plataformaApp": {
+        "matchingsJob": {
+            "home": {
+                "title": "Matchings Jobs",
+                "createLabel": "Create a new Matchings Job",
+                "createOrEditLabel": "Create or edit a Matchings Job",
+                "search": "Search for Matchings Job"
+            },
+            "created": "A new Matchings Job is created with identifier {{ param }}",
+            "updated": "A Matchings Job is updated with identifier {{ param }}",
+            "deleted": "A Matchings Job is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Matchings Job {{ id }}?"
+            },
+            "detail": {
+                "title": "Matchings Job"
+            },
+            "cutNote": "Cut Note",
+            "order": "Order",
+            "require": "Require",
+            "opportunities": "Opportunities",
+            "matchings": "Matchings"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="requests">
+            <h2><span jhiTranslate="plataformaApp.requests.detail.title">Requests</span> {{requests.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.requests.name">Name</span></dt>
+                <dd>
+                    <span>{{requests.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.requests.opportunities">Opportunities</span></dt>
+                <dd>
+                    <div *ngIf="requests.opportunitiesId">
+                        <a [routerLink]="['/opportunities', requests.opportunitiesId, 'view']">{{requests.opportunitiesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/requests', requests.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

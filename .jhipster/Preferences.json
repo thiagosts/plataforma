@@ -1,0 +1,26 @@
+{
+    "name": "Preferences",
+    "fields": [
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "candidates",
+            "otherEntityName": "candidates",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164648",
+    "entityTableName": "preferences",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

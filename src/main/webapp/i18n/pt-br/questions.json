@@ -1,0 +1,28 @@
+{
+    "plataformaApp": {
+        "questions": {
+            "home": {
+                "title": "Questions",
+                "createLabel": "Criar novo Questions",
+                "createOrEditLabel": "Criar ou editar Questions",
+                "search": "Pesquisar por Questions"
+            },
+            "created": "Um novo Questions foi criado com o identificador {{ param }}",
+            "updated": "Um Questions foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Questions foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Questions {{ id }}?"
+            },
+            "detail": {
+                "title": "Questions"
+            },
+            "name": "Name",
+            "description": "Description",
+            "type": "Type",
+            "order": "Order",
+            "require": "Require",
+            "answers": "Answers",
+            "matchings": "Matchings"
+        }
+    }
+}

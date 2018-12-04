@@ -1,0 +1,48 @@
+{
+    "name": "Questions",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "order",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "require",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "answers",
+            "otherEntityName": "answers",
+            "otherEntityRelationshipName": "questions"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "matchings",
+            "otherEntityName": "matchings",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181204164654",
+    "entityTableName": "questions",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

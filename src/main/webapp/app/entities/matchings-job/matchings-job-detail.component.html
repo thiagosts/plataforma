@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="matchingsJob">
+            <h2><span jhiTranslate="plataformaApp.matchingsJob.detail.title">Matchings Job</span> {{matchingsJob.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="plataformaApp.matchingsJob.cutNote">Cut Note</span></dt>
+                <dd>
+                    <span>{{matchingsJob.cutNote}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchingsJob.order">Order</span></dt>
+                <dd>
+                    <span>{{matchingsJob.order}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchingsJob.require">Require</span></dt>
+                <dd>
+                    <span>{{matchingsJob.require}}</span>
+                </dd>
+                <dt><span jhiTranslate="plataformaApp.matchingsJob.opportunities">Opportunities</span></dt>
+                <dd>
+                    <div *ngIf="matchingsJob.opportunitiesId">
+                        <a [routerLink]="['/opportunities', matchingsJob.opportunitiesId, 'view']">{{matchingsJob.opportunitiesId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/matchings-job', matchingsJob.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

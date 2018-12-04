@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="plataformaApp.customers.home.title">Customers</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-customers" [routerLink]="['/customers/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span class="hidden-sm-down"  jhiTranslate="plataformaApp.customers.home.createLabel">
+            Create new Customers
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'plataformaApp.customers.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <fa-icon [icon]="'search'"></fa-icon>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <fa-icon [icon]="'trash-alt'"></fa-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="customers">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span jhiTranslate="plataformaApp.customers.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="documentCode"><span jhiTranslate="plataformaApp.customers.documentCode">Document Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companySize"><span jhiTranslate="plataformaApp.customers.companySize">Company Size</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span jhiTranslate="plataformaApp.customers.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="customersCode"><span jhiTranslate="plataformaApp.customers.customersCode">Customers Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="logoDesktopUrl"><span jhiTranslate="plataformaApp.customers.logoDesktopUrl">Logo Desktop Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="logoMobileUrl"><span jhiTranslate="plataformaApp.customers.logoMobileUrl">Logo Mobile Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="active"><span jhiTranslate="plataformaApp.customers.active">Active</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let customers of customers ;trackBy: trackId">
+                <td><a [routerLink]="['/customers', customers.id, 'view' ]">{{customers.id}}</a></td>
+                <td>{{customers.name}}</td>
+                <td>{{customers.documentCode}}</td>
+                <td>{{customers.companySize}}</td>
+                <td>{{customers.description}}</td>
+                <td>{{customers.customersCode}}</td>
+                <td>{{customers.logoDesktopUrl}}</td>
+                <td>{{customers.logoMobileUrl}}</td>
+                <td>{{customers.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/customers', customers.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/customers', customers.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'customers/'+ customers.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
